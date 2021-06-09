@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -11,5 +12,6 @@
   "dependencies": {
     "express": "^4.17.1",
     "uuid": "^8.3.2"
-  }
+  },
+  "keywords": []
 }
