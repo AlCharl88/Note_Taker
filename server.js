@@ -3,7 +3,7 @@
 const express = require('express');
 const path = require('path');
 const { json } = require('express');
-const unId = require('unId');
+const uuid = require('uuid');
 const fs = requre('fs');
 
 
@@ -76,7 +76,7 @@ function readDB(filePath, cback) {
     };
 
     app.post("/api/notes", (req, res) => {
-        const uniqId = unId.v4();
+        const uniqId = uuid.v4();
 
         fs.readFile("./db/db.json", "utf8", (err, dbFile) => {
             if(err) {
@@ -88,7 +88,7 @@ function readDB(filePath, cback) {
                 jsonString.push(note);
                 const saveData = JSON.stringify(jsonString);
 
-                fs.writeFile("./db/db.json". saveData, err => {
+                fs.writeFile("./db/db.json", saveData, err => {
                     if(err) {
                         console.log("error wriitng file", err);
                     } else {
