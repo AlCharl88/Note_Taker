@@ -4,7 +4,7 @@ const express = require('express');
 const path = require('path');
 const { json } = require('express');
 const uuid = require('uuid');
-const fs = requre('fs');
+const fs = require('fs');
 
 
 // Sets up the Express App
@@ -14,23 +14,23 @@ const PORT = process.env.PORT || 3000;
 // Set up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "./public/assets")));
+app.use(express.static(path.join(__dirname, "/assets")));
 
 // Routes
 
 app.get("/", (req, res) =>
 res.sendFile(path.join
-    (__dirname, "./public/index.html"))
+    (__dirname, "index.html"))
 );
 app.get("/notes", (req, res) =>
 res.sendFile(path.join
-    (__dirname, "./public/notes.html"))
+    (__dirname, "notes.html"))
 );
 
 app.delete("/api/notes/:id", (req, res) => {
     const noteTodel = req.params.id;
     console.log(noteTodel);
-    readDB("./db/db.json", (err, note) => {
+    readDB("./db.json", (err, note) => {
         if(err) {
             console.log(err);
             return;
@@ -40,7 +40,7 @@ app.delete("/api/notes/:id", (req, res) => {
         note.splice(notetodelInd,1);
         const saveData = JSON.stringify(note);
 
-        fs.writeFile("./db/db.json", saveData, err => {
+        fs.writeFile("./db.json", saveData, err => {
             if(err) {
                 console.log("error writing file", err);
             }else{
@@ -53,7 +53,7 @@ app.delete("/api/notes/:id", (req, res) => {
 
 // API Routes
 app.get("/api/notes", (req, res) => {
-    readDB("./db/db.json", (err, note) => {
+    readDB("./db.json", (err, note) => {
         if(err) {
             console.log(err);
             return;
@@ -78,7 +78,7 @@ function readDB(filePath, cback) {
     app.post("/api/notes", (req, res) => {
         const uniqId = uuid.v4();
 
-        fs.readFile("./db/db.json", "utf8", (err, dbFile) => {
+        fs.readFile("./db.json", "utf8", (err, dbFile) => {
             if(err) {
                 console.log("error reading file", err);
             }else {
@@ -88,7 +88,7 @@ function readDB(filePath, cback) {
                 jsonString.push(note);
                 const saveData = JSON.stringify(jsonString);
 
-                fs.writeFile("./db/db.json", saveData, err => {
+                fs.writeFile("./db.json", saveData, err => {
                     if(err) {
                         console.log("error wriitng file", err);
                     } else {
@@ -102,7 +102,7 @@ function readDB(filePath, cback) {
 });
 
 app.listen(PORT, () => {
-    console.log(`APP listening at http://localhost:${Port}`)
+    console.log(`APP listening at http://localhost:${PORT}`)
 });
 
 
