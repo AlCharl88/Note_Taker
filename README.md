@@ -52,7 +52,10 @@
     
 ##  Contact
 
-    Alain Tagne - [Github](https://github.com/AlCharl88) Email: [Alain](mailto:alctagne@gmail.com) 
+    Alain Tagne - 
+[Github](https://github.com/AlCharl88) Email: [Alain](mailto:alctagne@gmail.com) 
+
+    
 
 ----
 
