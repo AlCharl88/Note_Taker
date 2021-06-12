@@ -1,6 +1,6 @@
 # Note_Taker
 
-![Badge for GitHub](https://img.shields.io/github/languages/top/Alcharl88/undefined?style=flat&logo=appveyor) 
+![Badge for GitHub](https://img.shields.io/github/languages/top/AlCharl88/undefined?style=flat&logo=appveyor) 
 
 ![header](./public/assets/images/header.jpg)
 
