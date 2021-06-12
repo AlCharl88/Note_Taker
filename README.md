@@ -51,9 +51,9 @@
     MIT License
     
 ##  Contact
-
-    Alain Tagne - 
-[Github](https://github.com/AlCharl88) Email: [Alain](mailto:alctagne@gmail.com) 
+ 
+[Github](https://github.com/AlCharl88) 
+[Email](mailto:alctagne@gmail.com) 
 
     
 
